@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog::Rejestracja</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Aplikacja Blogowa z użyciem Spring Boot</h1>
+        <hr/>
+        <a th:href="@{/}">Home</a>
+        <h2>Zarejestruj nowe konto</h2>
+        <form action="#"
+              th:action="@{/register}"
+              th:object="${account}"
+              method="POST">
+            <div>
+                <label for="firstname">Imię</label>
+                <input id="firstname" type="text" th:field="*{firstName}" placeholder="First Name"/>
+            </div>
+            <div>
+                <label for="lastname">Nazwisko</label>
+                <input id="lastname" type="text" th:field="*{lastName}" placeholder="Last Name"/>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="text" th:field="*{email}" placeholder="Email"/>
+            </div>
+            <div>
+                <label for="password">Hasło</label>
+                <input id="password" type="password" th:field="*{password}" placeholder="Password"/>
+            </div>
+            <button type="submit">Zarejestruj!</button>
+        </form>
+    </div>
+
+</body>
+</html>

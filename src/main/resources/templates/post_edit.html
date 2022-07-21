@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog::Edytuj Post</title>
+</head>
+<body>
+<div class="container">
+    <a th:href="@{/}">Home</a>
+    <form action="#"
+          th:action="@{/post/{id}'(id=${post.id})}"
+          th:object="${post}"
+          method="POST">
+        <input type="hidden" th:field="*{account}"/>
+        <input type="hidden" th:field="*{createdAt}"/>
+        <h2>Edytuj post</h2>
+        <div>
+            <label for="new-post-title">Tytuł</label>
+            <input id="new-post-title" type="text" th:field="*{title}" placeholder="Title"/>
+        </div>
+        <div>
+            <label for="new-post-body">Treść</label>
+            <textarea id="new-post-body" th:field="*{body}"></textarea>
+        </div>
+        <button type="submit">Edytuj post</button>
+    </form>
+</div>
+</body>
+</html>
