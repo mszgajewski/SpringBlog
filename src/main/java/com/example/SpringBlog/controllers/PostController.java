@@ -54,7 +54,7 @@ public class PostController {
         return "redirect:/posts/" + post.getId();
     }
 
-    @PostMapping("/posts/new")
+    @GetMapping("/posts/new")
     @PreAuthorize("isAuthenticated()")
     public String createNewPost(Model model, Principal principal) {
         String authUsername = "anonymousUser";
