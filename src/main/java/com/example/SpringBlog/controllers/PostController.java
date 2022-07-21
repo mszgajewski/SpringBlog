@@ -26,10 +26,10 @@ public class PostController {
     @Autowired
     private AccountService accountService;
 
-    @GetMapping("/posts/(id}")
+    @GetMapping("/posts/{id}")
     public String getPost(@PathVariable Long id, Model model) {
-        Optional<Post> optionalPost = this.postService.getById(id);
 
+        Optional<Post> optionalPost = this.postService.getById(id);
         if (optionalPost.isPresent()) {
             Post post = optionalPost.get();
             model.addAttribute("post", post);
@@ -103,7 +103,7 @@ public class PostController {
     }
 
     @GetMapping("/posts/{id}/delete")
-    @PreAuthorize("hasRole('ROLE_ADMIN)")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deletePost(@PathVariable Long id) {
         Optional <Post> optionalPost = postService.getById(id);
         if (optionalPost.isPresent()) {

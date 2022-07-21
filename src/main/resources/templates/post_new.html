@@ -7,9 +7,9 @@
 </head>
 <body>
 <div class="container">
-    <a th:href="@{/}">Home</a>
+    <a th:href="@{/}">Strona główna</a>
     <form action="#"
-          th:action="@{/post/new}"
+          th:action="@{/posts/new}"
           th:object="${post}"
           method="POST">
         <input type="hidden" th:field="*{account}"/>

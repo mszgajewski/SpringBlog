@@ -16,7 +16,7 @@
     </ul>
     <div class="posts-container">
         <div class="post" th:each="post :${posts}">
-            <h2><a th:href="@{'/posts/' + ${post.id}}" th:text="${post.title}">Tytuł</a></h2>
+        <h2><a th:href="@{'/posts/' + ${post.id}}" th:text="${post.title}">Tytuł</a></h2>
         <h5 th:text="'Autor ' + ${post.account.firstName}">Autor</h5>
         <h5 th:text="'Opublikowano ' + ${post.createdAt}">Utworzono</h5>
         <h5 th:text="'Edytowano ' + ${post.updatedAt}">Edytowano</h5>
@@ -37,6 +37,7 @@
             </div>
             <button type="submit">Wyloguj</button>
         </form>
+</div>
 </div>
 </body>
 </html>
