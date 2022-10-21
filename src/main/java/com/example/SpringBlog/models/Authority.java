@@ -3,7 +3,6 @@ package com.example.SpringBlog.models;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -22,10 +21,15 @@ public class Authority implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Authority authority = (Authority) o;
-        return Objects.equals(name, authority.name);
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Authority authority1 = (Authority) o;
+
+        return name.equals(authority1.name);
     }
 
     @Override
@@ -36,7 +40,7 @@ public class Authority implements Serializable {
     @Override
     public String toString() {
         return "Authority{" +
-                "name='" + name + '\'' +
+                "name='" + name + "'" +
                 '}';
     }
 }

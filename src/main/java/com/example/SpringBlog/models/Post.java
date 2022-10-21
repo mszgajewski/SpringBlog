@@ -32,8 +32,8 @@ public class Post {
     public String toString() {
         return "Post{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
-                ", body='" + body + '\'' +
+                ", title='" + title + "'" +
+                ", body='" + body + "'" +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';

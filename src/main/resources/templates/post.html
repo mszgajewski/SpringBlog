@@ -4,6 +4,7 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog::Post</title>
 </head>
@@ -14,7 +15,7 @@
        <h2 th:text="${post.title}">Tytuł</h2>
        <h5 th:text="'Utworzono ' + ${post.createdAt}">Utworzono</h5>
        <h5 th:text="'Edytowano ' + ${post.updatedAt}">Edytowano</h5>
-       <p th: text="${post.body}">treść posta</p>
+       <p th:text="${post.body}">treść posta</p>
    </div>
     <ul sec:authorize="isAuthenticated()">
         <li><a th:href="@{'/posts/' + ${post.id} + '/edit}">Edytuj</a></li>

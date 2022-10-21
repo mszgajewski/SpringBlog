@@ -82,7 +82,7 @@ public class PostController {
         }
 
         if (post.getAccount().getEmail().compareToIgnoreCase(authUsername) < 0) {
-
+            System.out.println("Tutaj");
         }
         postService.save(post);
         return "redirect:/posts/" + post.getId();
